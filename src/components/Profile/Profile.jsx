@@ -1,8 +1,17 @@
-import  PropTypes  from "prop-types";
-import { ProfileContainer, Description, Avatar, Name, Tag, Location, Stats, StatsItem, Label, Quantity } from "./Profile.Styled";
-export const Profile = ({avatar, username, tag, location, stats}) =>{
-
-
+import PropTypes from 'prop-types';
+import {
+  ProfileContainer,
+  Description,
+  Avatar,
+  Name,
+  Tag,
+  Location,
+  Stats,
+  StatsItem,
+  Label,
+  Quantity,
+} from './Profile.Styled';
+export const Profile = ({ avatar, username, tag, location, stats }) => {
   return (
     <ProfileContainer>
       <Description>
@@ -10,25 +19,25 @@ export const Profile = ({avatar, username, tag, location, stats}) =>{
         <Name>{username}</Name>
         <Tag>@{tag}</Tag>
         <Location>{location}</Location>
-    </Description>
-  
-    <Stats>
-      <StatsItem>
-        <Label>Followers</Label>
-        <Quantity>{stats.followers}</Quantity>
-      </StatsItem>
-      <StatsItem>
-        <Label>Views</Label>
-        <Quantity>{stats.views}</Quantity>
-      </StatsItem>
-      <StatsItem>
-        <Label>Likes</Label>
-        <Quantity>{stats.likes}</Quantity>
-      </StatsItem>
-    </Stats>
+      </Description>
+
+      <Stats>
+        <StatsItem>
+          <Label>Followers</Label>
+          <Quantity>{stats.followers}</Quantity>
+        </StatsItem>
+        <StatsItem>
+          <Label>Views</Label>
+          <Quantity>{stats.views}</Quantity>
+        </StatsItem>
+        <StatsItem>
+          <Label>Likes</Label>
+          <Quantity>{stats.likes}</Quantity>
+        </StatsItem>
+      </Stats>
     </ProfileContainer>
-    )
-}
+  );
+};
 Profile.propTypes = {
   avatar: PropTypes.string.isRequired,
   username: PropTypes.string.isRequired,

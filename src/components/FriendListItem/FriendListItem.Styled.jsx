@@ -5,23 +5,22 @@ export const Item = styled.li`
   margin: 0 auto;
   gap: 10px;
   outline: 1px solid grey;
-  background-color: rgb(230, 230, 230);
   max-width: 320px;
   padding: 10px 0px;
   list-style: none;
-  box-shadow: 0 4px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
   width: 97%;
+  border-radius: 2px;
+  font-weight: bold;
 
-  /* Стилі для псевдоелемента залежно від isOnline */
   &::before {
+    margin-top: 15px;
+    margin-left: 5px;
     content: '';
     display: inline-block;
     width: 20px;
     height: 20px;
     border-radius: 50%;
-    margin-right: 10px;
     background-color: ${props => (props.isOnline ? 'green' : 'red')};
-    position: absolute;
-
   }
 `;
