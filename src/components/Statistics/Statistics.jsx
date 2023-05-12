@@ -1,17 +1,18 @@
+import { StatisticsSection, Title, StatList, Item } from "./Statistics.Styled";
 export const Statistics = ({title, stats}) =>{
     return(
-    <section className="statistics">
-     {title !== '' &&  <h2 className="title">{title}</h2>}
+    <StatisticsSection>
+     {title !== '' &&  <Title>{title}</Title>}
            
-
-  <ul className="stat-list">
+      
+  <StatList>
     {stats.map(({id, label, percentage}) =>(
-    <li className="item" key={id}>
+    <Item key={id}>
       <span className="label">{label}</span>
       <span className="percentage">{percentage}</span>
-    </li>
+    </Item>
       ))}  
-      </ul>
-</section>
+      </StatList>
+</StatisticsSection>
     )
 }
