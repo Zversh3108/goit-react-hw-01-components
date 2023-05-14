@@ -1,6 +1,6 @@
 import { StatisticsSection, Title, StatList, Item } from './Statistics.Styled';
 import generateRandomColor from 'utils/randomColor';
-
+import PropTypes from 'prop-types';
 export const Statistics = ({ title, stats }) => {
   return (
     <StatisticsSection>
@@ -16,3 +16,13 @@ export const Statistics = ({ title, stats }) => {
     </StatisticsSection>
   );
 };
+Statistics.propTypes = {
+  title: PropTypes.string.isRequired,
+  stats: PropTypes.arrayOf(
+  PropTypes.shape({
+  id: PropTypes.string.isRequired,
+  label: PropTypes.string.isRequired,
+  percentage: PropTypes.number.isRequired,
+  })
+  ).isRequired,
+  };
